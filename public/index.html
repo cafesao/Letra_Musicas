@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Letra de Musica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="interface">
+        <div id="buscar">
+            <h1>Buscador de letras de musicas</h1>
+            <input type="search" name="nomeMusicaProcurarInput" id="nomeMusicaProcurarInput" placeholder="Nome da Musica" autofocus>
+            <button type="submit" id="pesquisar">Pesquisar</button>
+        </div>
+        <div id="resultado_buscar"></div>
+    
+        <div id="adicionar">
+            <h1>Para adicionar alguma musica informe os campos abaixo</h1>
+            <input type="text" name="nomeMusicaInput" id="nomeMusicaInput" placeholder="Nome da Musica">
+            <br>
+            <input type="text" name="nomeArtistaInput" id="nomeArtistaInput" placeholder="Nome do Artista">
+            <br>
+            <input type="number" name="anoLancamentoInput" id="anoLancamentoInput" placeholder="Ano de Lançamento">
+            <br>
+            <textarea name="letraInput" id="letraInput" cols="40" rows="15" wrap="hard" placeholder="Insira a letra da Musica"></textarea>
+            <br>
+            <button type="submit" id="adicionar">Adicionar</button>
+        </div>
+        <div id="resultado_adicionar"></div>
+    </div>
+    
+    <script src="bundle.js"></script>
+</body>
+</html>
