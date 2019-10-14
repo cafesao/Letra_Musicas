@@ -2,9 +2,10 @@ const mongo = require('mongoose')
 const Music = mongo.model('Music')
 
 module.exports  = {
-    async coletarTudo(req,res) {
-        const musicas = await Music.find()
-        return res.json(musicas)
+
+    async coletarTudo(req, res) {
+        const musica = await Music.find()
+        return res.json(musica)
     },
 
     async coletar(req,res) {
