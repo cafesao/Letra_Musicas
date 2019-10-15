@@ -1,36 +1,34 @@
 import axios from 'axios'
-export { procurarMusica, apagarResultadoDiv, apagarResultadoInput }
+export { procurarMusica }
 const musica = {}
 
-async function procurarMusica (div, musicaUser) {
-    try{
-        carregando(true,div)
+let div = document.querySelector('div#resultado_buscar')
 
-        const musicaAxios = await axios.get(`http://localhost:3001/api/dados/${musicaUser}`)
-        const { nomeMusica, nomeArtista, lancamento, letra } = musicaAxios.data[0]
-        musica.Musica = nomeMusica
-        musica.Artista = nomeArtista
-        musica.Lançamento = lancamento
-        musica.Letra = letra
+async function procurarMusica (musicaUser) {
+    apagarResultadoDiv()
+    carregando(true)
 
-        
+    const musicaAxios = await axios.get(`http://localhost:3001/api/dados/${musicaUser}`)
 
-        carregando(false,div)
-        if (musica.Musica == '') {
-            alert('Não foi encontrado a sua musica, verifique e tente novamente!')
-        }
-        else {
-            adicionarResultado(div)
-        }
+    carregando(false)
+    console.log(musicaAxios.data)
+    if (musicaAxios.data.length == 0) {
+        alert('Não foi encontrado a sua musica, verifique e tente novamente!')
     }
-    catch(error){
-        carregando(false, div)
-        alert('Algo deu errado, verifique e tente novamente!')
-        console.warn(error)
+    else {
+        for(let i = 0; i < musicaAxios.data.length; i++) {
+            const { nomeMusica, nomeArtista, lancamento, letra } = musicaAxios.data[i]
+            musica.Musica = nomeMusica
+            musica.Artista = nomeArtista
+            musica.Lançamento = lancamento
+            musica.Letra = letra
+
+            adicionarResultado()
+        }
     }
 }
 
-function carregando(carregando = true,div) {
+function carregando(carregando) {
     if(carregando == true) {
         let carregandoElemento = document.createElement('p')
         let carregandoTexto = document.createTextNode('Carregando...')
@@ -43,8 +41,7 @@ function carregando(carregando = true,div) {
     }
 }
 
-function adicionarResultado(div) {
-
+function adicionarResultado() {
     //Titulos
     let tituloMusicaElemento = document.createElement('h2')
     let tituloArtistaElemento = document.createElement('h2')
@@ -55,6 +52,10 @@ function adicionarResultado(div) {
     let artistaElemento = document.createElement('p')
     let lançamentoElemento = document.createElement('p')
     let letraElemento = document.createElement('pre')
+
+    //Div
+    let divMusica = document.createElement('div')
+    divMusica.setAttribute('id', 'divMusica')
     
     //Titulos
     let tituloMusicaTexto = document.createTextNode('Musica')
@@ -78,23 +79,21 @@ function adicionarResultado(div) {
     lançamentoElemento.appendChild(lançamentoTexto)
     letraElemento.appendChild(letraTexto)   
     
-    div.appendChild(tituloMusicaElemento) 
-    div.appendChild(musicaElemento)  
+    divMusica.appendChild(tituloMusicaElemento) 
+    divMusica.appendChild(musicaElemento)  
 
-    div.appendChild(tituloArtistaElemento)
-    div.appendChild(artistaElemento)
+    divMusica.appendChild(tituloArtistaElemento)
+    divMusica.appendChild(artistaElemento)
 
-    div.appendChild(tituloLançamentoElemento) 
-    div.appendChild(lançamentoElemento) 
+    divMusica.appendChild(tituloLançamentoElemento) 
+    divMusica.appendChild(lançamentoElemento) 
 
-    div.appendChild(tituloLetraElemento)
-    div.appendChild(letraElemento)  
+    divMusica.appendChild(tituloLetraElemento)
+    divMusica.appendChild(letraElemento)  
+
+    div.appendChild(divMusica)
 }
 
-function apagarResultadoDiv(div) {
+function apagarResultadoDiv() {
     div.innerHTML = ''
-}
-
-function apagarResultadoInput(nomeMusica) {
-    nomeMusica.value = ''
 }
