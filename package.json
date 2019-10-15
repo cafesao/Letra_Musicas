@@ -1,7 +1,7 @@
 {
   "name": "letra_musica",
   "version": "1.0.0",
-  "description": "Colocando o nome e o artista da musica, tem como resultado a letra desta musica",
+  "description": "Busca e adiciona musicas",
   "main": "",
   "repository": "https://github.com/cafesao/SkyLab_Cafesao.git",
   "author": "cafesao <gabriel.diasdutra2@gmail.com>",
