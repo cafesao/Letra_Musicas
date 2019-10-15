@@ -18,10 +18,15 @@ Sim :+1: , usando a API do [Letras](https://api.vagalume.com.br/docs/letras/), a
 
 ### E como faço para rodar? :open_mouth:
 
-A mesma coisa que os outros projetos, você precisa do [Yarn](https://yarnpkg.com/pt-BR/) instalado, junto com o [Node.JS](https://nodejs.org/pt-br/).
+Primeiramente você precisa ter o [Yarn](https://yarnpkg.com/pt-BR/) instalado, junto com o [Node.JS](https://nodejs.org/pt-br/).
 
-Depois apenas acesse a pasta do projeto e de o comando `yarn install`, para baixar todos os modulos.
-Feito isso, apenas abra dois terminais e em um coloque `yarn dev` (Para ligar o front-end e poder ser acessado) e no outro `yarn server` (Para ligar o Back-end e iniciar toda a API)
+Feito isso e verificado se o Yarn e o Node.JS esta devidamente instalado, e so entrar na pasta raiz via terminal e colocar o comando `yarn install`, feito isso ele ira instalar todas as dependências.
+
+Explicação do comando:
+
+>O comando yarn install é usado para instalar todas as dependências de um projeto. As dependências são recuperadas do arquivo package.json do seu projeto, e armazenadas no arquivo yarn.lock.
+
+Depois de ter instalado as dependências e so colocar `yarn dev` para rodar a aplicação e `yarn server` para rodar o server, acesse o link que o terminal do `yarn dev` dará como resposta e já estará funcionando, simples assim.
 
 ### Opcional :exclamation:
 
