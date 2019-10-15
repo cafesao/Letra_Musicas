@@ -1,6 +1,8 @@
+//Constantes
 const mongo = require('mongoose')
 const Music = mongo.model('Music')
 
+//Exportando Modulos
 module.exports  = {
 
     async coletarTudo(req, res) {
