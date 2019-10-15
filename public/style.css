@@ -20,6 +20,15 @@ div#interface{
     padding: 10px;
 }
 
+div#divMusica{
+    padding: 5px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.568);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
 h1 {
     font-family: 'Righteous', cursive;
     font-size: 28pt;
@@ -37,14 +46,13 @@ h2 {
 p {
     font-family: 'Hind Siliguri', sans-serif;
     font-size: 19pt;
-    color: rgb(202, 59, 59);
+    color: rgb(233, 41, 41);
 }
 
 pre {
     font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 18pt;
-    color: rgb(59, 131, 127);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.26);
+    color: rgb(34, 97, 15);
 }
 
 input {
