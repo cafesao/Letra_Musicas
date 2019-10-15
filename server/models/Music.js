@@ -1,5 +1,7 @@
+//Importando Modulo
 const mongo = require('mongoose')
 
+//Iniciando Modelo
 const MusicSchema = new mongo.Schema({
     nomeMusica: {
         type: String,
