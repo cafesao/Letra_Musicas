@@ -1,7 +1,9 @@
 import axios from 'axios'
-export { prepararObjeto, apagarInput }
+export { prepararObjeto }
 
-function prepararObjeto(nomeMusica, nomeArtista, lancamento, letra, div) {
+var div  = document.querySelector('div#resultado_adicionar')
+
+function prepararObjeto(nomeMusica, nomeArtista, lancamento, letra) {
     const Musica = {
        nomeMusica,
        nomeArtista,
@@ -9,20 +11,20 @@ function prepararObjeto(nomeMusica, nomeArtista, lancamento, letra, div) {
        letra,
        tags: ''
     }
-    prepararTags(nomeMusica, nomeArtista, Musica, div)
+    prepararTags(nomeMusica, nomeArtista, Musica)
 }
 
-function prepararTags(nomeMusica, nomeArtista, Musica, div) {
+function prepararTags(nomeMusica, nomeArtista, Musica) {
     let musicaTags = nomeMusica.toUpperCase().split(" ")
     let artistaTags = nomeArtista.toUpperCase().split(" ")
     var juntaTudo = musicaTags.concat(artistaTags)
 
     Musica.tags = juntaTudo
     
-    adicionarMusica(Musica, div)
+    adicionarMusica(Musica)
 }
 
-function carregando(carregando = true,div) {
+function carregando(carregando) {
     if(carregando == true) {
         let carregandoElemento = document.createElement('p')
         let carregandoTexto = document.createTextNode('Carregando...')
@@ -35,22 +37,11 @@ function carregando(carregando = true,div) {
     }
 }
 
-async function adicionarMusica(Musica, div) {
-    try{
-        carregando(true, div)
-        await axios.post('http://localhost:3001/api/dados', Musica)
-        carregando(false, div)
-        alert('Sua musica foi carregada')
+async function adicionarMusica(Musica) {
+    carregando(true)
 
-    }
-    catch(error){
-        console.warn(error)
-    }
-}
+    await axios.post('http://localhost:3001/api/dados', Musica)
 
-function apagarInput(nomeMusica,nomeArtista,lancamento,letra) {
-    nomeMusica.value = ''
-    nomeArtista.value = ''
-    lancamento.value = ''
-    letra.value = ''
+    carregando(false)
+    alert('Sua musica foi carregada')
 }
