@@ -2,19 +2,16 @@
 import { procurarMusica } from './funcoes_Pesquisa'
 import { prepararObjeto } from './funcoes_Adicionar'
 
-//Variaveis
-var nomeMusicaProcurar = document.querySelector('input#nomeMusicaProcurarInput')
+var botao_Pesquisar = document.querySelector('button#pesquisar') 
+botao_Pesquisar.addEventListener("click", Pesquisar)
 
+var nomeMusicaProcurar = document.querySelector('input#nomeMusicaProcurarInput')
 nomeMusicaProcurar.addEventListener("keydown", (e) => {
     if (e.keyCode === 13) { 
         Pesquisar()
     }
 })
 
-let botao_Pesquisar = document.querySelector('button#pesquisar') 
-botao_Pesquisar.addEventListener("click", Pesquisar)
-
-//Funções
 function apagarResultadoPesquisa() {
     nomeMusica.value = ''
 }
@@ -37,7 +34,7 @@ var nomeArtista = document.querySelector('input#nomeArtistaInput')
 var lancamento = document.querySelector('input#anoLancamentoInput')
 var letra = document.querySelector('#letraInput')  
 
-let botao_Adicionar = document.querySelector('button#adicionar')
+var botao_Adicionar = document.querySelector('button#adicionar')
 botao_Adicionar.addEventListener("click", Adicionar)
 
 //Funções
