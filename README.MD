@@ -4,12 +4,12 @@
 ### Quem é esse tal de Cafesão? :question:
 
 Ola, meu nome é Gabriel, apelido **Cafesão**.
-Sou apenas um cara que **ama programar** e gosta de desafios, e desta vez o desafio foi criar um Server (Back-End)  que ouvesse um banco de dados (MongoDB) e que organizasse os GET e POST, mas não só isso, criar a parte do usuário (Front-End) para adicionar e pesquisar musicas.
+Sou apenas um cara que **ama programar** e gosta de desafios, e desta vez o desafio foi criar um Server (Back-End)  que houvesse um banco de dados (MongoDB) e que organizasse os GET e POST, mas não só isso, criar a parte do usuário (Front-End) para adicionar e pesquisar musicas.
 >Interessante, eu sei.
 
 ### E como foi a criação de tudo isso? :grey_question:
 
-Olha, foi interessante, passei por problemas e aprendi algumas coisas novas, e isto é o mais interessante de fazer todo o projeto, e você aprender coisas novas conforme vai evoluindo sua aplicação.
+Olha, foi interessante, passei por problemas e aprendi algumas coisas novas, e isto é o mais interessante fazer todo o projeto, e você aprender coisas novas conforme vai evoluindo a sua aplicação.
 Teve um erro de digitação que descobri só depois DE **1 DIA E MEIO**, sim, um erro fez com que eu trancasse toda a aplicação por **36 HORAS**, pois é, erros travam projetos...
 
 ### Mas não tinha uma maneira mais fácil de fazer tudo isso? :hushed:
